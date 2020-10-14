@@ -1,42 +1,23 @@
 import React from 'react';
 
-class SearchBar extends React.Component {
-
-  state = {
-    clicked: false,
-  }
-
-  radioButtonHandle = event => {
-    this.props.radioButtonHandle(event.target.value)
-    this.setState({
-      clicked: event.target.value
-    })
-  }
-
-  getFilterValue = (e) => {
-    this.props.filterHandler(e.target.value)
-  }
-
-  
-  render() {
-    console.log()
+const SearchBar = () => {
   return (
     <div>
 
       <strong>Sort by:</strong>
       <label>
-        <input type="radio" value="Alphabetically" checked={this.state.clicked === "Alphabetically"} onChange={this.radioButtonHandle}/>
+        <input type="radio" value="Alphabetically" checked={null} onChange={null}/>
         Alphabetically
       </label>
       <label>
-        <input type="radio" value="Price" checked={this.state.clicked === "Price"} onChange={this.radioButtonHandle}/>
+        <input type="radio" value="Price" checked={null} onChange={null}/>
         Price
       </label>
       <br/>
 
       <label>
         <strong>Filter:</strong>
-        <select onChange={this.getFilterValue}>
+        <select onChange={null}>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
@@ -46,7 +27,6 @@ class SearchBar extends React.Component {
 
     </div>
   );
-  }
 }
 
 
